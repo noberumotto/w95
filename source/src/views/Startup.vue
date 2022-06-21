@@ -1,10 +1,5 @@
 <template>
   <div class="framework">
-    <div class="startup">
-      <div class="logo">
-        <img src="../assets/Microsoft_Windows_95_logo.png" />
-      </div>
-    </div>
     <div class="loading" :class="{ hide: starting }">
       <p v-for="(item, index) in info" :key="index">{{ item }}</p>
       <label></label>
