@@ -603,25 +603,17 @@ export default {
       });
       this.shrotcutList.push(shortcut);
     },
-    getTextDocumentName(name, newname = "", index = 1) {
-      if (newname == "") {
-        // console.log("test");
-        newname = name;
-      }
-
-      var isHas = false;
-      this.shrotcutList.forEach((item) => {
-        if (item.name == newname) {
-          isHas = true;
-        }
-      });
-
-      if (isHas) {
+    getTextDocumentName(name) {
+      let list = this.shrotcutList;
+      return (function fn(newname = "", index = 1) {
+        newname = newname == "" ? name : newname;
         index++;
-        return this.getTextDocumentName(name, name + "(" + index + ")", index);
-      }
-
-      return newname;
+        var document = list.find((item) => item.name == newname);
+        if (document) {
+          return fn(name + "(" + index + ")", index);
+        }
+        return newname;
+      })();
     },
   },
 };
