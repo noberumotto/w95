@@ -88,7 +88,7 @@
 
     <div class="window-border">
       <div class="app-main">
-        <div ref="content" v-html="html"></div>
+        <div class="cotainer" ref="content" v-html="html"></div>
       </div>
     </div>
   </div>
@@ -103,6 +103,8 @@ import Btn from "../Btn.vue";
 import TextBox from "../TextBox.vue";
 import { marked } from "marked";
 import badimage from "../../library/badimage";
+import Prism from "../../library/prism/prism";
+import "../../library/prism/prism.css";
 
 export default {
   components: { Shortcut, ContextMenu, Window, Btn, TextBox },
@@ -165,6 +167,15 @@ export default {
       };
 
       marked.use({ renderer });
+      marked.setOptions({
+        highlight: function (code, lang, callback) {
+          if (lang == "") {
+            lang = "javascript";
+          }
+          return Prism.highlight(code, Prism.languages[lang], lang);
+        },
+      });
+
       this.html = marked.parse(md.default);
       this.$nextTick(() => {
         this.handleImage();
@@ -309,7 +320,16 @@ export default {
   }
 }
 .app-main {
-  padding: 2px 10px;
+  position: relative;
+  .cotainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-y: scroll;
+    padding: 2px 10px;
+  }
 }
 // .content {
 //   width: 100%;

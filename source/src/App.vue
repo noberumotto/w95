@@ -51,8 +51,11 @@ export default {
   box-sizing: border-box;
   font-family: "宋体";
   outline: none;
-  font-size: 12px;
+  // font-size: 12px;
   /* font-family: "simsun" !important; */
+}
+*:not(h1,h2,h3,h4){
+  font-size: 12px;
 }
 @font-face {
   font-family: "simsun";
@@ -141,12 +144,11 @@ hr {
   border-bottom-color: #6d6d6d;
   box-sizing: border-box;
   box-shadow: 1px 1px 0 0 black;
-
 }
-.bg-gray{
+.bg-gray {
   background: #c0c7c8;
 }
-.inputbox{
+.inputbox {
   background: #ffffff;
   border: 1px solid #6d6d6d;
   border-right-color: #ffffff;
@@ -156,4 +158,29 @@ hr {
   width: 100%;
 }
 
+.wordpad {
+  p {
+    line-height: 2em;
+    margin: 5px 0;
+    code {
+      background: #c0c7c8;
+      border: 1px solid #6d6d6d;
+      border-right-color: #ffffff;
+      border-bottom-color: #ffffff;
+      box-shadow: 1px 1px 0 0 black;
+      box-sizing: border-box;
+      padding: 2px 4px;
+      margin: 0 5px;
+      color: #414040;
+    }
+  }
+  pre {
+    background: #ffffd5;
+    border: 1px solid #414040;
+    padding: 10px;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.308);
+    code {
+    }
+  }
+}
 </style>

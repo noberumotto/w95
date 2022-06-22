@@ -141,7 +141,7 @@ function getFiles(dir) {
         if (folder) {
             location = path.join(location, folder);
         }
-        if (fileModel.type == "folder") {
+        if (file.indexOf(".") == -1) {
             location = path.join(location, file);
         }
 
