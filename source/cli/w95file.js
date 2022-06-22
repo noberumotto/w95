@@ -174,8 +174,10 @@ function getFiles(dir) {
 
             //  文件时间
             createTime = parseInt(stats.birthtimeMs / 1000);
-            updateTime = parseInt(stats.mtimeMs / 1000);
+            updateTime = parseInt(stats.ctimeMs / 1000);
 
+            console.log(file);
+            console.log(stats);
 
 
             fileModel.args = {
