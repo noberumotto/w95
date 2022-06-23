@@ -4,7 +4,7 @@
 
 👉 [https://noberumotto.github.io/](https://noberumotto.github.io/)
 <p align="left">
-  <a href="about.md"> <img src="w95.jpg" width="800"/></a>
+  <a href="https://noberumotto.github.io/"> <img src="w95.jpg" width="800"/></a>
 </p>
 
 在UI上尽可能的还原windows95了，也加入了一些我自己的想法，像模拟了老式显示器上的颗粒感，所以看上去会比较模糊。
